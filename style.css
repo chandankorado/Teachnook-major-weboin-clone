@@ -1,0 +1,686 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+
+@media (max-width: 1209px){
+    .navbar .nav-item{
+        display: none;
+    }
+    
+}
+/* Media query to hide sidebar-left when screen width is 1210px or more */
+@media (min-width: 1210px) {
+    .sidebar-left {
+        display: none;
+    }
+}
+
+@media (max-width: 600px){
+    .navbar .nav-item{
+        display: none;
+    }
+    .menu-icon .line1{
+        width: 1em;
+        padding-right: 0.0001em;
+        transform: translate(-60%, -12px);
+    }
+    .menu-icon .line2{
+        transform: translate(-50%, -50%);
+    }
+    .menu-icon .line3{
+        width: 1em;
+        padding-right: 0.00001em;
+        transform: translate(-50%, 8px);
+    } 
+    .openmenu-icon .line1{
+        width: 1em;
+        padding-left: 1em;
+        transform: translate(-50%, -12px);
+    }
+    .openmenu-icon .line3{
+        width: 1em;
+        padding-left: 0.00001em;
+        transform: translate(-50%, 8px);
+    }
+    .openmenu-icon .line2{
+        transform: translate(-50%, -50%);
+        padding-left: 0.5em;
+    }
+
+}
+
+/* Center the navigation items */
+.navbar-nav {
+    display: flex;
+    justify-content: center;
+    gap: 0.5em;
+    float: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding-top: 1%;
+}
+
+/* Underline animation for navigation items and dropdown items */
+.navbar-nav li, .dropdown-btn,
+.navbar-nav a, .dropdown-btn {
+    position: relative;
+}
+
+.navbar-nav a::after, .dropdown-btn::after{
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #000;
+    transition: width 0.5s ease;
+}
+
+.navbar-nav a:hover::after, .dropdown-btn:hover::after {
+    width: 70%;
+    
+}
+
+/* Hide the dropdown menu by default */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    max-height: 0;
+    overflow: auto;
+    transition: max-height 0.3s ease;
+    transform: translateX(-100%); /* Initially, slide the dropdown menu up */
+    transition: transform 0.5s ease;
+}
+
+/* Show the dropdown menu when hovering over the parent nav-item */
+.hover-dropdown:hover .dropdown-menu {
+    display: block;
+    max-height: 500px; /* Adjust the height as needed */
+    transform: translateX(0); /* Slide the dropdown menu down on hover */
+    /* transition: transform 0.5s ease; */
+}
+
+/* Slide in elements inside the dropdown menu one by one */
+.dropdown-menu li {
+    transform: translateX(-100%);
+    transition: transform 0.5s ease;
+}
+
+.hover-dropdown:hover .dropdown-menu li {
+    transform: translateX(0);
+}
+
+/* Menu Icon Styling */
+.menu-icon {
+
+    height: 3em;
+    width: 3.3em;
+    max-width: 50px;
+    max-height: 50px;
+    background-image: linear-gradient(to right, #8c4040,#ff1706);
+    border-radius: 5px;
+    justify-content: space-between;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    margin-right: 1.4%;
+    background-color: #f5f8f8fe; /* Change to desired background color */
+     /* Make it rounded */
+    padding: 8px; /*Adjust padding as needed for spacing */
+    border: 2px solid #dbf706; /*Change to desired border color and width */
+}
+.menu-icon div{
+    width: 3.7em;
+    height: 3.5em;
+    margin: 40px;
+    position: relative;
+    
+}
+.menu-icon span {
+    background: #ffffff;
+    width: 2em;
+    height: 0.2em;
+    border-radius: 5px;
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 1.8%;
+    transform: translate(-50%, -50%);
+    transition: transform 1s, width 1s;
+    
+}
+.menu-icon .line1{
+    width: 1em;
+    padding-right: 1.2em;
+    transform: translate(-60%, -12px);
+}
+.menu-icon .line2{
+    transform: translate(-50%, -50%);
+}
+.menu-icon .line3{
+    width: 1em;
+    padding-right: 1.2em;
+    transform: translate(-50%, 8px);
+}
+
+.openmenu-icon .line1{
+    width: 1em;
+    padding-left: 1em;
+    transform: translate(-50%, -12px);
+}
+
+.openmenu-icon .line3{
+    width: 1em;
+    padding-left: 1em;
+    transform: translate(-50%, 8px);
+}
+.openmenu-icon .line2{
+    transform: translate(-50%, -50%);
+    padding-left: 0.5em;
+}
+
+/* Side Menu Styling */
+.sidebar-right {
+    position: fixed;
+    top: 0;
+    right: -50%;
+    width: 50%;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgb(172, 69, 9);
+    transition: right 0.7s ease;
+    z-index: 1000;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.sidebar-right.open {
+    right: 0;
+}
+
+/* Add a gap between contact-info and follow-us */
+.sidebar-right .contact-info {
+    margin-top: 5em;
+    margin-bottom: 2em;
+    margin-right: 2em;
+    font-size: 1.1em;
+}
+.sidebar-right h4{
+    margin-top: 1em;
+    font-size: 1.4rem;
+}
+
+/* Add a gap between follow-us icons links */
+.sidebar-right .follow-us a {
+    margin-right: 1em;
+   /* margin-top: 3em;
+    margin-bottom: 2em; */
+    font-size: 2.7em;
+}
+
+/* Add a gap between the five links */
+.sidebar-right ul {
+    margin-top: 5em;
+    list-style: none; /* Remove the bullet points */
+    padding: 0; /* Remove default padding */
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-right ul li {
+    margin-bottom: 2em;
+    font-size: 1.7vw;
+    margin-bottom: 10px;
+}
+/* Remove link underlines */
+.sidebar-right ul li a {
+    text-decoration: none;
+    color: #000000; /* Optionally set the link color */
+}
+
+.sidebar-right .close-icon-right {
+    font-size: 3rem;
+    cursor: pointer;
+    position: absolute;
+    border-radius: 1px;
+    border: #000000;
+    
+    top: 20px;
+    right: 20px;
+}
+
+.sidebar-right.menu-content {
+    margin-top: 20px;
+}
+
+/* Sidebar Dropdown Styling */
+.sidebar-left {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 250px;
+    height: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(44, 68, 4, 0.931);
+    transition: left 0.7s ease;
+    z-index: 1000;
+    padding: 20px;
+    transform: translateX(-100%); /* Initially, slide the left sidebar left */
+    transition: transform 0.3s ease;
+    overflow-y: auto;
+}
+
+.sidebar-left a, .dropdown-btn {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 1em;
+    color: #281d1d;
+    display: block;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    outline: aqua;
+}
+
+.sidebar-left .fa-chevron-down{
+    float: right;
+}
+.sidebar-left a:hover, .dropdown-btn:hover {
+    color: #000000;
+}
+
+.active {
+    background-color: rgb(255, 255, 255);
+    color: rgb(237, 85, 15);
+}
+
+.dropdown-container {
+    display: none;
+    background-color: #ffffff;
+    padding-left: 8px;
+    padding-top: 1%;
+    border-radius: 20%;
+    border: 2px 0 3px 0;
+    border-color: #000000;
+    transform: translateX(-100%); /* Initially, slide the dropdown-container left */
+    transition: transform 0.3s ease;
+  }
+
+.sidebar-left .close-icon-left {
+    font-size: 34px;
+    cursor: pointer;
+    position: absolute;
+    top: 1.4vw;
+    right: 2vh;
+
+}
+
+.sidebar-left.open {
+    left: 0;
+    padding-top: 1%;
+    transform: translateX(0);
+}
+    /* Slide the left sidebar in from the left */
+.dropdown-btn.active+.dropdown-container {
+    transform: translateX(0);
+    /* Slide the dropdown-container in from the left when dropdown-btn is active */
+}
+
+/* Slide in elements inside the dropdown-container one by one */
+.dropdown-container a {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.dropdown-btn.active+.dropdown-container a {
+    transform: translateX(0);
+    /* Slide the dropdown items in from the left when dropdown-btn is active */
+}
+
+/* Modal Overlay Styling */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent black background */
+    display: none;
+    /* Initially hidden */
+    z-index: 999;
+    /* Make sure the overlay is above other elements */
+}
+
+.navbar.sticky {
+    position: fixed;
+    top: -90%;
+    /* Move the navbar outside the view */
+    width: 100%;
+    height: 110px;
+    animation: slideDown 1.2s ease forwards;
+}
+
+.navbar {
+    justify-content: center;
+}
+
+.dropdown-menu.two-items {
+    width: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.dropdown-menu.two-items a {
+    white-space: nowrap;
+}
+
+@keyframes slideDown {
+    to {
+        top: 0;
+    }
+}
+
+.sidebar-left .name{
+    width: 1em;
+    height: 3em;
+    padding-left: 3px;
+}
+
+.navbar-name {
+    width: 7em;
+    height: 3em;
+    padding-left: 3px;
+}
+
+.sidebar-left .logo{
+    width: 1em;
+    height: 20%;
+}
+
+.navbar-logo {
+    width: 3em;
+    height: 3em;
+
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    padding-left: 3%;
+}
+
+.nav-item{
+    font-size: 1em;
+    font-family: Barlow+Condensed;
+    font-weight: 600;
+}
+
+.section1{
+    height: 70vw;
+}
+/* Add styles for the rounded box */
+.rounded-box {
+    background-color: #3716dd; /* Blue color */
+    border-radius: 50px; /* Rounded corners */
+    color: #ffffff; /* Text color inside the box */
+    height: 60vw; /* Adjust the width as needed */
+    width: 95%; /* Limit the maximum width for responsiveness */
+    margin: 2em auto; /* Center the box horizontally */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional shadow effect */
+    /* text-align: left; */
+    overflow: hidden;
+    
+}
+.section1{
+    height: 70vw; 
+    background-color: #ffffff;
+}
+
+.section1 .rounded-box h1{
+    padding: 10vw;
+    font-size: 4vw;
+}
+.section1 .rounded-box a{
+    font-size: 2vw;
+}
+
+.section1 .rounded-box .banner{
+    padding-left: 20vw;
+    height: 50%;
+    height: 50%;
+    
+}
+.section1 .rounded-box .banners,
+.section1 .rounded-box .intro{
+    width: 50%;
+    
+}
+.section1 .rounded-box .banner1{
+    padding-bottom: 25vw;
+    height: 40vw;
+    height: 40vw;
+    
+}
+
+.section2 .intro{
+    width: 100%;
+    height: auto;
+    padding: 6vw 50px;
+}
+.section2 .intro h4{
+    font-size: 1.3em;
+}
+.section2 .intro h1{
+    font-size: 2em;
+}
+
+
+.rounded-boxes{
+    background-color: #e4a9a9; /* Blue color */
+    border-radius: 10px; /* Rounded corners */
+    color: #ffffff; /* Text color inside the box */
+    height:30vw; /* Adjust the width as needed */
+    min-height: 300px !important;
+    min-width: 300px !important;
+    width:32vw; /* Limit the maximum width for responsiveness */
+    margin: 2em auto; /* Center the box horizontally */
+    box-shadow: 0 5px 5px rgba(118, 9, 9, 0.2); /* Optional shadow effect */
+    /* overflow: hidden; */
+}
+
+.rounded-boxes h3{
+    font-size: 2.5vw;
+    padding:15% 0;
+    color: #010204;
+}
+
+.section2 .box{
+    height: 800px;
+}
+
+.section2{
+    display: flexbox;
+    height: 730px; 
+    background-image: url(circle-2.png); 
+    background-color: #f1f1f1;
+}
+
+@media (max-width: 1146px){
+    .section2{
+        height: 950px;
+    }
+}
+
+@media (max-width: 663px){
+    .section2{
+        height: 1200px;
+    }
+    .rounded-boxes{
+        padding: 1vw;
+    }
+}
+
+.link-item {
+    margin-right: 10px; /* Adjust the margin value as desired */
+    font-size: 16px; /* Adjust the font size as desired */
+    color: #007bff; /* Change the color to your preferred color */
+    text-decoration: none; /* Remove the underline from the links */
+    transition: color 0.3s; /* Add transition for smooth hover effect */
+}
+
+.section2 .link-item:hover {
+    color: #0056b3; /* Change the color on hover to your preferred color */
+    text-decoration: underline; /* Add underline on hover */
+}
+
+.rounded-box1 {
+    background-color: #f1e8e8;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+    height: 400px;
+    width: 270px !important;
+    justify-content: space-between;
+    margin: 20px; /* Add margin to create a gap between the boxes */
+}
+
+.box-image {
+    width: 140%;
+    height: 50%;
+    padding-left: -40px;
+    align-items: center;
+    transition: transform 0.4s;
+}
+
+
+.box-image:hover {
+    transform: scale(1.2);
+}
+
+.section5 .intro{
+    width: 100%;
+    height: auto;
+    text-align: center;
+    color: #f1f1f1;
+    padding-top: 30px;
+}
+
+.section5 .intro .para{
+    padding: 20px;
+}
+
+.section5 .intro h4{
+    color: #a5190dfe;
+}
+
+.boxes{
+    padding: 40px;
+    background-color: #b9b0c5; /* Blue color */
+    border-radius: 20px; /* Rounded corners */
+    color: #ffffff; /* Text color inside the box */
+    height:300px; /* Adjust the width as needed */
+    width:250px !important; /* Limit the maximum width for responsiveness */
+    margin: 2em auto; /* Center the box horizontally */
+    box-shadow: 0 5px 5px rgba(118, 9, 9, 0.2); /* Optional shadow effect */
+    font-size: 18px;
+    text-align: center;
+}
+/* .boxes .fa-light{
+    width: 10px;
+    height: 10px;
+} */
+
+.boxes h1,
+.boxes h4{
+    padding: 10px;
+}
+
+.slider{
+    padding: 30px;
+}
+
+.right, .left{
+    text-align: left;
+    padding-top: 30px;
+}
+
+.right h1,h6,h5,
+.left h1,h6,h5{
+    padding: 10px;
+}
+
+.right .col-sm-8,
+.left .col-sm-8{
+    padding-top: 7%;
+}
+
+.rounded-boxes-1{
+    background-color: #e4c1c1; /* Blue color */
+    /* padding: 10px; Padding on all sides */
+    border-radius: 10px; /* Rounded corners */
+    color: #ffffff; /* Text color inside the box */
+    height:500px; /* Adjust the width as needed */
+    width:400px !important; /* Limit the maximum width for responsiveness */
+    margin: 0; /* Center the box horizontally */
+}
+
+.section7 .intro{
+    padding: 50px;
+}
+.section8{
+    height: 400px;
+}
+.rounded-bx {
+    background-color: #171325;
+   
+    background-image: url(shapes-2.png),url(shapes-3.png);
+    background-repeat: no-repeat;
+    border-radius: 50px; /* Rounded corners */
+    color: #ffffff; /* Text color inside the box */
+    height: 70%; /* Adjust the width as needed */
+    width: 95%; /* Limit the maximum width for responsiveness */
+    margin: 2em auto; /* Center the box horizontally */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional shadow effect */
+    /* text-align: left; */
+    overflow: hidden;
+    text-align: center;   
+    padding: 2%;
+}
+
+.txt{
+    padding: 2%;
+}
+.section8 .email-input {
+    border: none;
+    border-bottom: 1px solid #000; /* Add a border for the single line effect */
+    outline: none;
+    padding: 5px;
+    margin-left: 10px;
+    font-size: 16px;
+  }
+
+.footer-line .line{
+    border-top: 1px solid #000;
+
+  }
+
+

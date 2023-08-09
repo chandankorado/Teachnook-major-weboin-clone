@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+    <html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky Navigation Bar with Animation</title>
+
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Quicksand:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&family=Quicksand:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation  -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <div class="logo-container">
+                    <img src="favicon.png" alt="Logo" class="navbar-logo">
+                    <img src="logo-light.jpg" alt="Logo" class="navbar-name">
+                </div>
+            </a>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item hover-dropdown">
+                        <a class="nav-link" href="#">Digital Agency <i class="fa-solid fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Home Startup </a></li>
+                            <li><a class="dropdown-item" href="#">Corporate Agency</a></li>
+                            <li><a class="dropdown-item" href="#">Creative Agency</a></li>
+                        </ul>    
+                    </li>
+                    <li class="nav-item hover-dropdown">
+                        <a class="nav-link" href="#">Services <i class="fa-solid fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Service Two</a></li>
+                            <li><a class="dropdown-item" href="#">Services Details</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item hover-dropdown">
+                        <a class="nav-link" href="#">Portfolio <i class="fa-solid fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Portfolio Types</a></li>
+                            <li><a class="dropdown-item" href="#">SDE Portfolio</a></li>
+                            <li><a class="dropdown-item" href="#">Portfolio Details</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item hover-dropdown">
+                        <a class="nav-link" href="#">Pages <i class="fa-solid fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">PAbout Us</a></li>
+                            <li><a class="dropdown-item" href="#">Office</a></li>
+                            <li><a class="dropdown-item" href="#">Office Details</a></li>
+                        </ul>
+                    <li class="nav-item hover-dropdown">
+                        <a class="nav-link" href="#">Blogs <i class="fa-solid fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Standard Post</a></li>
+                            <li><a class="dropdown-item" href="#">Gallery Post</a></li>
+                            <li><a class="dropdown-item" href="#">Quote Post</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item hover-dropdown">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="menu-icon" id="menu-icon">
+                <span class="line1"></span>
+                <span class="line2"></span>
+                <span class="line3"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Modal Overlay -->
+    <div class="modal-overlay" id="modalOverlay"></div>
+
+    <!-- Sidebar Left Dropdown -->
+    <div class="sidebar-left">
+        <div class="logo-container">
+            <img src="favicon.png" alt="Logo" class="navbar-logo">
+            <img src="logo-light.jpg" alt="Logo" class="navbar-name">
+        </div>
+        <div class="close-icon-left">
+            <i class="fa-solid fa-circle-xmark" style="color: #010204;"></i>
+        </div>
+        <br>
+        <button class="dropdown-btn">Digital Agency
+            <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="na1.html">Digital Agency </a>
+            <a href="#">Home Startup </a>
+            <a href="#">Corporate Agency</a>
+            <a href="#">Creative Agency</a>
+        </div>
+
+        <button class="dropdown-btn">Services
+            <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="#">Service Two</a>
+            <a href="#">Services Details</a>
+        </div>
+
+        <button class="dropdown-btn">Portfolio
+            <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="#">Portfolio Types</a>
+            <a href="#">SDE Portfolio</a>
+            <a href="#">Portfolio Details</a>
+        </div>
+
+        <button class="dropdown-btn">Pages
+            <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="#">About Us</a>
+            <a href="#">Office</a>
+            <a href="#">Office Details</a>
+        </div>
+    </div>
+
+    <!-- Sidebar Right -->
+    <div class="sidebar-right">
+        <div class="close-icon-right"><i class="fa-solid fa-circle-xmark" style="color: #010204;"></i></div>
+        <div class="row">
+            <!-- First column for links -->
+            <div class="col-md-6">
+                <ul>
+                    <li><a href="#">
+                            <h4>Digital Agency</h4>
+                        </a></li>
+                    <li><a href="#">
+                            <h4>Home</h4>
+                        </a></li>
+                    <li><a href="#">
+                            <h4>Personal Portfolio</h4>
+                        </a></li>
+                    <li><a href="#">
+                            <h4>Startup</h4>
+                        </a></li>
+                    <li><a href="#">
+                            <h4>Corporate Agency</h4>
+                        </a></li>
+                </ul>
+            </div>
+            <!-- Second column for contact information and social media icons -->
+            <div class="col-md-6">
+
+                <div class="contact-info">
+                    <h4>Contact Info</h4>
+                    <i class="fas fa-phone-alt"></i> Phone: +123456789<br>
+                    <i class="fas fa-envelope"></i> Email: example@example.com<br>
+                    <i class="fas fa-map-marker-alt"></i> Address: 123 Street, City<br>
+                </div>
+                <h4>Follow Us</h4>
+                <div class="follow-us">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-vimeo"></i></a>
+                    <!-- Add more social media icons here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Banner -->
+    <div class="section1 container-fluid">
+        <div class="rounded-box">
+            <div class="row">
+                <div class="col intro">
+                    <h1 class="title">WEBOIN-"Your brand's digital potential." <br><br>
+                        <a class="btn btn-dark" href="#" role="button">View More</a>
+                    </h1>
+                </div>
+                <div class="col banners">
+                    <img class="banner" src="banner.png" alt="" srcset="">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <img class="banner1" src="banner1.png" alt="" srcset="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section2 container-fluid">
+        <div class="intro" style="background-image: url(bubble-2.png);background-repeat: no-repeat;float: right;">
+            <h4>
+                What We Can Do For You
+            </h4>
+            <h1>From strategy to execution,
+                Services we excel in</h1>
+        </div>
+        <div class="row justify-content-center box " style="display: flexbox;">
+            <div class="row col-sm-3 rounded-boxes mx-3">
+
+                <div class="col-4">
+                    <img src="banner-thumb-1.png" style="height: 30%;width: 100%;padding-top: 50px;" alt="">
+                </div>
+                <div class="col-8">
+                    <h3>Lead Generation Service</h3>
+                    <p style="color: #010204;">we understand that leads are the lifeblood of your business’s growth.
+                        Our
+                        lead generation</p>
+                </div>
+
+            </div>
+            <div class="row col-sm-3 rounded-boxes mx-3">
+
+                <div class="col-4">
+                    <img src="Property-1Other-04.png" style="height: 30%;width: 100%;padding-top: 50px;" alt="">
+                </div>
+                <div class="col-8">
+                    <h3>Mobile APP development</h3>
+                    <p style="color: #010204;">we are passionate about creating innovative and user-centric Android
+                        applications</p>
+                </div>
+
+            </div>
+            <div class="row col-sm-3 rounded-boxes mx-3">
+
+                <div class="col-4">
+                    <img src="banner-thumb-4.png" style="height: 30%;width: 100%;padding-top: 50px;" alt="">
+                </div>
+                <div class="col-8">
+                    <h3>Strategic Branding</h3>
+                    <p style="color: #010204;">Our expert team of designers and developers combine aesthetics with
+                        functionality to</p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <div class="section3 container-fluid"
+        style="height: 250px; background-image: url(circle-2.png); background-color: #f5e7e7;display: flexbox;padding-left: 5%;">
+        <div class="row justify-content-center intro"
+            style="height: 150px;background-image: url(bubble-2.png);background-repeat: no-repeat;">
+            <h4>
+                Our Project
+            </h4>
+            <h1 style="padding-bottom: 60px;">Some of our
+                finest work.</h1><br>
+        </div>
+        <div class="row justify-content-start">
+            <div class="col-sm-3 col-6">
+                <a href="#" class="d-block text-center text-decoration-none link-item"
+                    style="color:black;font-size:  20px;">All Works</a>
+            </div>
+            <div class="col-sm-3 col-6">
+                <a href="#" class="d-block text-center text-decoration-none link-item"
+                    style="color:black;font-size:  20px;">Branding</a>
+            </div>
+            <div class="col-sm-3 col-6">
+                <a href="#" class="d-block text-center text-decoration-none link-item"
+                    style="color:black;font-size:  20px;">Design</a>
+            </div>
+            <div class="col-sm-3 col-6">
+                <a href="#" class="d-block text-center text-decoration-none link-item"
+                    style="color:black;font-size:  20px;">Website</a>
+            </div>
+        </div>
+    </div>
+    <div class="section4 container-fluid" style="height: 900px; background-color: #f1f1f1;">
+        <div class="row justify-content-center">
+            <div class="col-sm-3 col-lg-3 mb-4 rounded-box1">
+
+                <img src="project-6.png" class="box-image" alt="Image 1">
+                <div class="box-text">
+                    <p>Text 1</p>
+
+                </div>
+            </div>
+            <div class="col-sm-3 col-lg-3 mb-4 rounded-box1">
+
+                <img src="project-4.png" class="box-image" alt="Image 2">
+                <div class="box-text">
+                    <p>Text 2</p>
+                </div>
+
+            </div>
+            <div class="col-sm-3 col-lg-3 mb-4 rounded-box1">
+
+                <img src="project-2.png" class="box-image" alt="Image 3">
+                <div class="box-text">
+                    <p>Text 3</p>
+
+                </div>
+            </div>
+            <div class="col-sm-3 col-lg-3 mb-4 rounded-box1">
+
+                <img src="project-1-1.png" class="box-image" alt="Image 4">
+                <div class="box-text">
+                    <p>Text 4</p>
+                </div>
+            </div>
+            <div class="col-sm-3 col-lg-3 mb-4 rounded-box1">
+
+                <img src="project-4.jpg" class="box-image" alt="Image 1">
+                <div class="box-text">
+                    <p>Text 1</p>
+
+                </div>
+            </div>
+            <div class="col-sm-3 col-lg-3 mb-4 rounded-box1">
+
+                <img src="project-2.jpg" class="box-image" alt="Image 2">
+                <div class="box-text">
+                    <p>Text 2</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="section5 container-fluid"
+        style="height: 700px; background-image: url(circle-2.png);background-color:#1d0819e6; display: flexbox;">
+
+        <div class="intro">
+            <h4 class="para">
+                Crafted by Time:
+            </h4>
+            <h1 class="para">Our Years of Know-How</h1>
+            <h5 class="para">With every challenge and triumph, our expertise has evolved, <br>enabling us to deliver
+                unmatched solutions to our clients.</h5>
+        </div>
+        <div class="row justify-content-center" style="display: flexbox;">
+            <div class="col-sm-3 col-lg-3 mb-4 justify-content-center boxes mx-3">
+                <div class="smile"><i class="fa-solid fa-user fa-xl" style="color: #ffffff;"></i></div>
+                <div>
+                    <h1>123+</h1>
+                </div>
+                <div>
+                    <h4>Years of operation</h4>
+                </div>
+            </div>
+            <div class="col-sm-3 col-lg-3 mb-4 justify-content-center boxes mx-3">
+                <div class="smile"><i class="fa-duotone fa-face-smile"
+                        style="--fa-primary-color: #ffffff; --fa-secondary-color: #ffffff;"></i></div>
+                <div>
+                    <h1>123+</h1>
+                </div>
+                <div>
+                    <h4>Happy customers</h4>
+                </div>
+            </div>
+            <div class="col-sm-3 col-lg-3 mb-4 justify-content-center boxes mx-3">
+                <div class="smile"><i class="fa-duotone fa-face-smile"
+                        style="--fa-primary-color: #ffffff; --fa-secondary-color: #ffffff;"></i></div>
+                <div>
+                    <h1>123+</h1>
+                </div>
+                <div>
+                    <h4>Projects deliverd</h4>
+                </div>
+            </div>
+            <div class="col-sm-3 col-lg-3 mb-4 justify-content-center boxes mx-3">
+                <div class="smile"><i class="fa-duotone fa-face-smile"
+                        style="--fa-primary-color: #ffffff; --fa-secondary-color: #ffffff;"></i></div>
+                <div>
+                    <h1>123+</h1>
+                </div>
+                <div>
+                    <h4>Awards</h4>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="section6 container-fluid"
+        style="height: 2500px; background-image: url(line-5.png); background-color: #f3f5f7;">
+        
+        <div class="row justify-content-center slider" style="display: flexbox;">
+            <div class="intro" style="background-image: url(bubble-2.png);background-repeat: no-repeat;float: right;">
+                <h6>
+                    What We Can Do For You
+                </h6>
+                <h1>From strategy to execution,
+                    Services we excel in</h1>
+                    <p>Conduct comprehensive market research to identify the specific needs, preferences, 
+                        and pain points of the target audience. Develop buyer personas that represent
+                         different customer segments to gain deeper insights into their behaviors and motivations.</p>
+            </div>
+            <div class="row right">
+                <div class="col-sm-8 text">
+                    <h6>Step-1</h6>
+                    <h1>Understanding the Target Audience:</h1>
+                    <h5>Conduct comprehensive market research to identify the specific needs,
+                        preferences, and pain points of the target audience. Develop buyer personas
+                        that represent different customer segments to gain deeper insights into their behaviors and
+                        motivations.</h5>
+                </div>
+                <div class="col-sm-4 rounded-boxes"><img src="process-1.png" style="padding-right: 70px;" alt=""
+                        srcset=""></div>
+            </div>
+            <div class="row left">
+                <div class="col-sm-4 rounded-boxes"><img src="process-1.png" style="padding-right: 70px;" alt=""
+                        srcset=""></div>
+                <div class="col-sm-8">
+                    <h6>Step-1</h6>
+                    <h1>Understanding the Target Audience:</h1>
+                    <h5>Conduct comprehensive market research to identify the specific needs,
+                        preferences, and pain points of the target audience. Develop buyer personas
+                        that represent different customer segments to gain deeper insights into their behaviors and
+                        motivations.</h5>
+                </div>
+            </div>
+            <div class="row right">
+                <div class="col-sm-8 text">
+                    <h6>Step-2</h6>
+                    <h1>Understanding the Target Audience:</h1>
+                    <h5>Conduct comprehensive market research to identify the specific needs,
+                        preferences, and pain points of the target audience. Develop buyer personas
+                        that represent different customer segments to gain deeper insights into their behaviors and
+                        motivations.</h5>
+                </div>
+                <div class="col-sm-4 rounded-boxes"><img src="process-1.png" style="padding-right: 70px;" alt=""
+                        srcset=""></div>
+            </div>
+            <div class="row left">
+                <div class="col-sm-4 rounded-boxes"><img src="process-1.png" style="padding-right: 70px;" alt=""
+                        srcset=""></div>
+                <div class="col-sm-8">
+                    <h6>Step-1</h6>
+                    <h1>Understanding the Target Audience:</h1>
+                    <h5>Conduct comprehensive market research to identify the specific needs,
+                        preferences, and pain points of the target audience. Develop buyer personas
+                        that represent different customer segments to gain deeper insights into their behaviors and
+                        motivations.</h5>
+                </div>
+            </div>
+            <div class="row right">
+                <div class="col-sm-8 text">
+                    <h6>Step-4</h6>
+                    <h1>Understanding the Target Audience:</h1>
+                    <h5>Conduct comprehensive market research to identify the specific needs,
+                        preferences, and pain points of the target audience. Develop buyer personas
+                        that represent different customer segments to gain deeper insights into their behaviors and
+                        motivations.</h5>
+                </div>
+                <div class="col-sm-4 rounded-boxes"><img src="process-1.png" style="padding-right: 70px;" alt=""
+                        srcset=""></div>
+            </div>
+        </div>
+    </div>
+    <div class="section7 container-fluid" style="height: 800px;">
+        <div class="intro" style="background-image: url(bubble-2.png);background-repeat: no-repeat;float: right;">
+            <h4>
+                What We Can Do For You
+            </h4>
+            <h1>From strategy to execution,
+                Services we excel in</h1>
+                <p>Conduct comprehensive market research to identify the specific needs, preferences, 
+                    and pain points of the target audience. Develop buyer personas that represent
+                     different customer segments to gain deeper insights into their behaviors and motivations.</p>
+        </div>
+        <div class="row justify-content-center box " 
+                style="display: flexbox;">
+            <div class="col-sm-3 rounded-boxes-1 mx-3">
+
+                <div class="col">
+                    <img src="yelp.png" style="width: 40%;height: 40%;padding-top: 20%;" alt="">
+                    <h4 style="color: #010204;padding-top: 10%;">we understand that leads are the lifeblood of your business growth.
+                        Our
+                        lead generation</h4>
+                </div>
+                <div class="row">
+                    <div class="col-sm-1">
+                        <img src="testimonial-1.png" style="padding-top: 60px;" alt="">
+                    </div>
+                    <div class="col-sm-11" style="padding: 10% 0 0 10%;color: #010204;">
+                        <h5>Floyd Miles</h5>
+                        <h6>Executive Chairman</h6>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-sm-3 rounded-boxes-1 mx-3">
+                
+                <div class="col">
+                    <img src="google-g.png" style="width: 20%;height: 30%;padding-top: 15%;" alt="">
+                    <h4 style="color: #010204;padding-top: 10%;">we are passionate about creating innovative and user-centric Android
+                        applications</h4>
+                </div>
+                <div class="row">
+                    <div class="col-sm-1">
+                        <img src="testimonial-3-1.png" style="padding-top: 60px;" alt="">
+                    </div>
+                    <div class="col-sm-11" style="padding: 10% 0 0 10%;color: #010204;">
+                        <h5>Martha Maldonado</h5>
+                        <h6>Executive Chairman</h6>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-sm-3 rounded-boxes-1 mx-3">
+                
+                <div class="col">
+                    <img src="fb.png" style="width: 20%;height: 30%;padding-top: 15%" alt="">
+                    <h4 style="color: #010204;padding-top: 10%;">Our expert team of designers and developers combine aesthetics with
+                        functionality to</h4>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-1">
+                        <img src="testimonial-1.png" style="padding-top: 60px;" alt="">
+                    </div>
+                    <div class="col-sm-11" style="padding: 10% 0 0 10%;color: #010204;">
+                        <h5>Savannah Nguyen</h5>
+                        <h6>Executive Chairman</h6>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="section8 container-fluid">
+
+        <div class="rounded-bx">
+            <div class="col txt">
+                <h6>Need a successful project?</h6>
+                <h2 style="padding: 2%;">Want to talk to a marketing expert?</h2>
+                <button type="button" class="btn btn-primary btn-lg" style="padding: 1%;">Contact With Us</button>
+            </div>
+        </div>
+
+        <div class="row justify-content-center" style="padding-inline: 20%;padding-top: 3%;padding-bottom: 3%;">
+            <div class="col"><a href="#"><i class="fab fa-facebook fa-2xl"></i></a></div>
+            <div class="col"><a href="#"><i class="fab fa-twitter fa-2xl"></i></a></div>
+            <div class="col"><a href="#"><i class="fab fa-instagram fa-2xl"></i></a></div>
+            <div class="col"><a href="#"><i class="fab fa-pinterest fa-2xl"></i></a></div>
+            <div class="col"><a href="#"><i class="fab fa-linkedin fa-2xl"></i></a></div>
+            <div class="col"><a href="#"><i class="fab fa-vimeo fa-2xl"></i></a></div>
+        </div>
+        <div class="row justify-content-center" style="padding: 5%;">
+            <div class="col">
+                <h1>Get in touch!</h1>
+                <p>Fusce varius, dolor tempor interdum tristique,
+                   dui urna bib endum magna, ut ullamcorper purus</p>
+                <div class="row">
+                    <div class="col-sm-8">
+                        <i class="fa-solid fa-envelope fa-xl"></i>
+                        <input type="text" placeholder="Your email address" class="email-input">
+                    </div>
+                    <div class="col-sm-4">
+                        <input class="btn btn-primary" type="submit" value="Submit">
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                        <h2>Services</h2>
+                        <p>Web Design and development</p>
+                        <p>Content strategy</p>
+                        <p>Advertising Strategy</p>
+                    </div>
+                    <div class="col">
+                        <h2>Resourses</h2>
+                        <p>About Us</p>
+                        <p>Blogs</p>
+                        <p>Shop</p>
+                    </div>
+                    <div class="col">
+                        <h2>Support</h2>
+                        <p>Contact</p>
+                        <p>Privacy Policy</p>
+                        <p>Terms of Use</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row footer-line" style="padding: 4%;">
+            <div class="row line">
+                <div class="col-sm-9">
+                    <p>© 2023. All rights reserved by Axilthemes.</p>
+                </div>
+                <div class="col-sm-3">
+                    <p>Privacy Policy Terms of Use</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+
+        window.onscroll = function () { stickyNavbar() };
+
+        var navbar = document.querySelector(".navbar");
+        var logo = document.querySelector(".navbar-logo");
+        var logoHeight = logo ? logo.offsetHeight : 0; // Get the height of the logo if it exists
+
+        var sticky = false;
+
+        function stickyNavbar() {
+            if (window.pageYOffset >= navbar.offsetTop + logoHeight && !sticky) {
+                navbar.classList.add("sticky");
+                logo.classList.add("logo-sticky"); // Add a class for the sticky logo if needed
+                sticky = true;
+            } else if (window.pageYOffset < navbar.offsetTop + logoHeight && sticky) {
+                navbar.classList.remove("sticky");
+                logo.classList.remove("logo-sticky"); // Remove the class for the sticky logo if needed
+                sticky = false;
+            }
+        }
+
+        const hoverDropdowns = document.querySelectorAll('.hover-dropdown');
+        const menuIcon = document.querySelector('.menu-icon');
+        const sidebarLeft = document.querySelector('.sidebar-left');
+        const sidebarRight = document.querySelector('.sidebar-right');
+        const closeLeft = document.querySelector('.close-icon-left');
+        const closeRight = document.querySelector('.close-icon-right');
+
+        const modalOverlay = document.getElementById('modalOverlay');
+
+        let isLeftSidebarOpen = false;
+        let isRightSidebarOpen = false;
+
+        // Function to show the modal overlay
+        function showModalOverlay() {
+            modalOverlay.style.display = 'block';
+        }
+
+        // Function to hide the modal overlay
+        function hideModalOverlay() {
+            modalOverlay.style.display = 'none';
+        }
+
+        // Function to show/hide the modal overlay
+        function updateModalOverlay() {
+            if (isLeftSidebarOpen || isRightSidebarOpen) {
+                modalOverlay.style.display = 'block';
+            } else {
+                modalOverlay.style.display = 'none';
+            }
+        }
+
+        menuIcon.addEventListener('click', function () {
+            if (window.innerWidth >= 1210) {
+                sidebarRight.classList.toggle('open');
+                //showModalOverlay();
+                isRightSidebarOpen = !isRightSidebarOpen;
+                updateModalOverlay(); // Update the modal overlay visibility
+            } else {
+                sidebarLeft.classList.toggle('open');
+                // showModalOverlay(); // Show the modal overlay when the sidebar is opened
+                isLeftSidebarOpen = !isLeftSidebarOpen;
+                updateModalOverlay(); // Update the modal overlay visibility
+
+                // Show all dropdown menus when the sidebar is opened
+                hoverDropdowns.forEach((dropdown) => {
+                    dropdown.classList.add('open');
+
+                });
+            }
+        });
+
+        closeLeft.addEventListener('click', function () {
+            sidebarLeft.classList.remove('open');
+            //hideModalOverlay(); // Hide the modal overlay when the sidebar is closed
+            isLeftSidebarOpen = false;
+            updateModalOverlay(); // Update the modal overlay visibility
+
+
+            // Hide all dropdown menus when the sidebar is closed
+            hoverDropdowns.forEach((dropdown) => {
+                dropdown.classList.remove('open');
+            });
+        });
+
+        closeRight.addEventListener('click', function () {
+            sidebarRight.classList.remove('open');
+            isRightSidebarOpen = false;
+            updateModalOverlay(); // Update the modal overlay visibility
+        });
+
+        // Event listener for the document click event
+        document.addEventListener('click', function (event) {
+            const target = event.target;
+
+            // Check if the clicked element is outside of the sidebar
+            if (!sidebarLeft.contains(target) && !menuIcon.contains(target)) {
+
+                sidebarLeft.classList.remove('open');
+                isLeftSidebarOpen = false;
+
+                // sidebarRight.classList.remove('open');
+                // isRightSidebarOpen = false;
+
+                updateModalOverlay(); // Update the modal overlay visibility
+                // Hide all dropdown menus when the sidebar is closed
+                hoverDropdowns.forEach((dropdown) => {
+                    dropdown.classList.remove('open');
+                });
+            }
+        });
+
+        // Event listener for the document click event to close sidebar-right
+        document.addEventListener('click', function (event) {
+            const target = event.target;
+
+            // Check if the clicked element is outside of sidebar-right
+            if (!sidebarRight.contains(target) && !menuIcon.contains(target)) {
+                sidebarRight.classList.remove('open');
+                //hideModalOverlay(); // Hide the modal overlay when the sidebar is closed
+                isRightSidebarOpen = false;
+                updateModalOverlay(); // Update the modal overlay visibility
+
+            }
+        });
+
+        // Function to close the sidebar
+
+        var menu = document.getElementById("menu-icon");
+
+        menu.onclick = function () {
+            menu.classList.toggle("openmenu-icon");
+        }
+
+        var dropdown = document.getElementsByClassName("dropdown-btn");
+        var i;
+
+        for (i = 0; i < dropdown.length; i++) {
+            dropdown[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+
+                var dropdownContent = this.nextElementSibling;
+                if (dropdownContent.style.display === "block") {
+                    dropdownContent.style.display = "none";
+                } else {
+                    dropdownContent.style.display = "block";
+                }
+            });
+        }
+
+    </script>
+</body>
+
+</html>
